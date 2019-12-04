@@ -211,6 +211,19 @@ if (MSVC)
   configure_file(version.rc.in ${CMAKE_CURRENT_BINARY_DIR}/version.rc @ONLY)
 endif (MSVC)
 
+if(IDJL_VXWORKS)
+  # The classical posix functions such as read and write has different signature in VxWorks w.r.t. to POSIX:
+  # POSIX: ssize_t read(int fildes, void *buf, size_t nbyte);
+  # VxWorks: int read(int fd, char * buffer, size_t maxbytes);
+  # POSIX: ssize_t write(int fildes, const void *buf, size_t nbyte);
+  # VxWorks: int write(int fd, char * buffer, size_t nbytes)
+  # Instead of patching all the source code, we allow in C++ the cast from void* to char*
+  add_definitions(-fpermissive)
+  add_definitions(-DHAVE_PTHREAD)
+  # Missing functions: std::isnan , std::strtof 
+  add_definitions("-include ${CMAKE_CURRENT_SOURCE_DIR}/vxworks-missing-functions.hh")
+endif()
+
 
 get_filename_component(protobuf_source_dir ${protobuf_SOURCE_DIR} PATH)
 
