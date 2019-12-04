@@ -38,6 +38,8 @@
 
 #include <google/protobuf/port_def.inc>
 
+#undef OK
+
 namespace google {
 namespace protobuf {
 namespace util {

@@ -34,6 +34,12 @@
 #include <string>
 #include <utility>
 
+#ifdef __VXWORKS__
+#undef OK 
+#undef ERROR
+#undef MAP
+#endif
+
 namespace google {
 namespace protobuf {
 namespace util {

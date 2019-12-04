@@ -63,7 +63,7 @@
     #pragma runtime_checks("c", off)
   #endif
 #else
-  #include <sys/param.h>   // __BYTE_ORDER
+  //#include <sys/param.h>   // __BYTE_ORDER
   #if defined(__OpenBSD__)
     #include <endian.h>
   #endif

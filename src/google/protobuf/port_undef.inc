@@ -73,6 +73,13 @@
 #pragma pop_macro("IN")
 #endif
 
+#ifdef __VXWORKS__
+#pragma pop_macro("OK")
+#pragma pop_macro("ERROR")
+#pragma pop_macro("MAP")
+#endif
+
+
 #if defined(__clang__)
 #pragma clang diagnostic pop
 #endif

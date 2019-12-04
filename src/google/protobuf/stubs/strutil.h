@@ -50,6 +50,13 @@ namespace protobuf {
 // HP C++ on Tru64 does not have strtoll, but strtol is already 64-bit.
 #define strtoll strtol
 #define strtoull strtoul
+#elif defined(__VXWORKS__)
+// strtoll and strtoull are missing in VxWorks, so we provide a custom version 
+// from
+// * https://github.com/epicsdeb/epics-base/blob/0b751f380e4ac0a43831d16e79053ca3ab3e4466/src/libCom/osi/os/vxWorks/strtoull.c
+// * https://github.com/epicsdeb/epics-base/blob/0b751f380e4ac0a43831d16e79053ca3ab3e4466/src/libCom/osi/os/vxWorks/strtoll.c
+#include "vxworks-strtoll.h"
+#include "vxworks-strtoull.h"
 #endif
 
 // ----------------------------------------------------------------------

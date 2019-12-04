@@ -358,6 +358,17 @@
 #undef IN
 #endif  // _MSC_VER
 
+// VxWorks declares several inconvenient macro names.  We #undef them and then
+// restore them in port_undef.inc.
+#ifdef __VXWORKS__
+#pragma push_macro("ERROR")
+#undef ERROR
+#pragma push_macro("OK")
+#undef OK
+#pragma push_macro("MAP")
+#undef MAP
+#endif
+
 #if defined(__clang__)
 #pragma clang diagnostic push
 // TODO(gerbens) ideally we cleanup the code. But a cursory try shows many

@@ -73,6 +73,7 @@
 #define PROTOBUF_EXPORT
 #endif
 
+#undef IMPORT
 
 namespace google {
 namespace protobuf {

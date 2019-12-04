@@ -58,6 +58,8 @@
 #define snprintf _snprintf
 #endif
 
+#undef ERROR
+
 namespace google {
 namespace protobuf {
 

@@ -36,6 +36,12 @@
 #include <google/protobuf/util/internal/utility.h>
 #include <google/protobuf/stubs/map_util.h>
 
+#ifdef __VXWORKS__
+#undef OK
+#undef ERROR 
+#undef MAP 
+#endif
+
 namespace google {
 namespace protobuf {
 namespace util {
