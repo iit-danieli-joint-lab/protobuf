@@ -367,6 +367,10 @@
 #undef OK
 #pragma push_macro("MAP")
 #undef MAP
+#pragma push_macro("NONE")
+#undef NONE
+#pragma push_macro("IMPORT")
+#undef IMPORT
 #endif
 
 #if defined(__clang__)

@@ -71,6 +71,11 @@
 
 #include <google/protobuf/port_def.inc>
 
+#ifdef __VXWORKS__
+#undef IMPORT
+#endif
+
+
 namespace google {
 namespace protobuf {
 

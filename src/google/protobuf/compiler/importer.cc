@@ -56,6 +56,10 @@
 #include <ctype.h>
 #endif
 
+#ifdef __VXWORKS__
+#undef IMPORT
+#endif
+
 namespace google {
 namespace protobuf {
 namespace compiler {

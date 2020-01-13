@@ -77,6 +77,8 @@
 #pragma pop_macro("OK")
 #pragma pop_macro("ERROR")
 #pragma pop_macro("MAP")
+#pragma pop_macro("NONE")
+#pragma pop_macro("IMPORT")
 #endif
 
 
