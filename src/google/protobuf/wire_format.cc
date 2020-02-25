@@ -916,7 +916,7 @@ uint8* WireFormat::InternalSerializeField(const FieldDescriptor* field,
       HANDLE_PRIMITIVE_TYPE(SINT64, int64, SInt64, Int64)
       HANDLE_PRIMITIVE_TYPE(UINT32, uint32, UInt32, UInt32)
       HANDLE_PRIMITIVE_TYPE(UINT64, uint64, UInt64, UInt64)
-      HANDLE_PRIMITIVE_TYPE(ENUM, int, Enum, Enum)
+      HANDLE_PRIMITIVE_TYPE(ENUM, int32, Enum, Enum)
 
 #undef HANDLE_PRIMITIVE_TYPE
 #define HANDLE_PRIMITIVE_TYPE(TYPE, CPPTYPE, TYPE_METHOD, CPPTYPE_METHOD)   \
