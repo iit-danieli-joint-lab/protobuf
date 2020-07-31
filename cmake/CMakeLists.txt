@@ -220,8 +220,6 @@ if(IDJL_VXWORKS)
   # Instead of patching all the source code, we allow in C++ the cast from void* to char*
   add_definitions(-fpermissive)
   add_definitions(-DHAVE_PTHREAD)
-  # Missing functions: std::isnan , std::strtof 
-  add_definitions("-include ${CMAKE_CURRENT_SOURCE_DIR}/vxworks-missing-functions.hh")
 endif()
 
 
