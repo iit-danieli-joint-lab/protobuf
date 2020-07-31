@@ -75,6 +75,12 @@
   #endif
 #endif
 
+// define PROTOBUF_LITTLE_ENDIAN to avoid problem on VxWorks
+// where it turns to be set to false
+// little endian is the very most widespread processor architecture,
+// forcing it to be true should be safe
+#define PROTOBUF_LITTLE_ENDIAN 1
+
 // These #includes are for the byte swap functions declared later on.
 #ifdef _MSC_VER
 #include <stdlib.h>  // NOLINT(build/include)
